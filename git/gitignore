@@ -1,20 +1,37 @@
-# OS or Editor files
-._*
+# Folder view configuration files
 .DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
 Thumbs.db
 
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
 
-# Always-ignore extensions
-*~
-*.diff
-*.err
-*.log
-*.orig
+# Vim swap and backup files
+*.swo
+*.swp
+
+# Compass/Sass
+.sass-cache
+
+# Espresso project files
+*.esproj
+
+# Jekyll
+_site/
+
+# SublimeText project files
+/*.sublime-project
+*.sublime-workspace
+sftp-config*.json
+
+# TextMate project fiels
+*.tmproj
+*.tmproject
+tmtags
+
+# Compiled Python files
 *.pyc
-*.rej
-*.sass-cache
-*.sw?
-*.vi

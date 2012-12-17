@@ -1,8 +1,8 @@
 #!/bin/bash
 
 DOTFILES_DIRECTORY="${HOME}/.dotfiles"
-DOTFILES_TARBALL_PATH="https://github.com/necolas/dotfiles/tarball/master"
-DOTFILES_GIT_REMOTE="https://github.com/necolas/dotfiles"
+DOTFILES_TARBALL_PATH="https://github.com/stevenbenisek/dotfiles/tarball/master"
+DOTFILES_GIT_REMOTE="https://github.com/stevenbenisek/dotfiles"
 
 # Download and extract the repository to the home directory if the directory is missing
 if [[ ! -d ${DOTFILES_DIRECTORY} ]]; then
@@ -18,16 +18,9 @@ fi
 
 cd ${DOTFILES_DIRECTORY}
 
-source ./lib/help
 source ./lib/utils
 source ./lib/brew
 source ./lib/npm
-
-# Help text
-if [[ "$1" == "-h" || "$1" == "--help" ]]; then
-    run_help
-    exit
-fi
 
 # Test for known flags
 for opt in $@

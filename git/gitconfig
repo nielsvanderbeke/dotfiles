@@ -1,58 +1,89 @@
 [alias]
-    # https://git.wiki.kernel.org/articles/a/l/i/Aliases.html
+    # add
+    a = add                         # add
+    ac = add --patch                # stage commits chunk by chunk
 
-    # `git remote prune origin`: remove remote-tracking branches that were deleted from the remote repo
-    # `git gc`: cleanup unnecessary files and optimize the local repository
-    # `git clean -df`: remove untracked files and directories from the working tree
-    # `git stash clear`: remove all stashed states
-    trim = !git remote prune origin && git gc
-    cleanup = !git clean -df && git stash clear
+    # branch
+    b = branch -v                   # branch (verbose)
 
-    # Add untracked, remove deleted, and show status
-    adda = !git add -A && git status
+    # checkout
+    co = checkout                   # checkout
+    nb = checkout -b                # create and switch to a new branch
 
-    # Fetch a repository ($1) and checkout its ref ($2) HEAD
-    browse = !bash -c 'git fetch "$1" "$2" && git checkout FETCH_HEAD' -
+    # clone
+    ca = clone --recursive          # clone a repository including all submodules
 
-    # Diff what is staged for the next commit
-    diffc = diff --cached
-    # Diff overview
-    diffst = diff --stat
+    # commit
+    c = commit -m                   # commit with message
+    ca = commit -am                 # commit all with message
 
-    # Custom graph log (append any tree-ish)
-    graph = log --pretty=nice --date-order --graph
-    # Custom graph log for all branches
-    grapha = log --pretty=nice --date-order --graph --all
+    # diff
+    d = diff                        # diff unstaged changes
+    dc = diff --cached              # diff staged changes
 
-    # Custom pretty log
-    logp = log --pretty=nice --date-order
+    # fetch
+    f = fetch                       # fetch
+    fa = fetch --all                # fetch all remotes
 
-    # Diffstat log
-    logst = log --stat
-    # Short format diffstat log
-    logsf = log --stat --format=oneline --abbrev-commit
+    # merge
+    m = merge                       # merge
 
-    # Display the number of commits per author in numerical order
-    who = shortlog -sn --
+    # pull
+    pl = pull                       # pull
+
+    # push
+    ps = push                       # push
+
+    # remote
+    r = remote -v                   # show remotes (verbose)
+
+    # reset
+    unstage = reset HEAD            # remove files from index
+    uncommit = reset --soft HEAD^   # go back before last commit, with files in uncommitted state
+
+    # status
+    s = status -s                   # status
+    st = status -s                  # status
+
+    # tag
+    t = tag -l                      # tag (verbose)
 
 [color]
-    # color opts: normal, black, red, green, yellow, blue, magenta, cyan, or white
-    ui = auto
+    # Turn on colors to see diffs, status, branches, etc in color.
+    branch = auto
+    diff = auto
     interactive = auto
+    pager = true
+    status = auto
+    ui = true
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
 
 [core]
     # Use custom `.gitignore` and `.gitattributes`
     excludesfile = ~/.gitignore
-    attributesfile = ~/.gitattributes
+    attributesfile = ~/.gitattributese
 
-[credential]
-    helper = osxkeychain
+    # Default editor
+    editor = subl -n -w
 
-[diff]
-    tool = mvimdiff
-
-[difftool]
-    prompt = false
+[merge]
+    # Better merge messages
+    summary = true
 
 [pretty]
     # tut: http://gitimmersion.com/lab_10.html
