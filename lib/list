@@ -1,0 +1,54 @@
+#!/bin/bash
+
+run_list() {
+
+cat <<EOT
+
+Additional software to install
+
+App Store
+
+Browsers:
+    Chrome
+    Chrome Canary
+    Firefox
+    Firefox Aurora
+    Opera
+
+Development:
+    Adobe Edge Inspect
+    Anvil
+    Charles Proxy
+    CodeKit
+    Espresso
+    Hammer
+    ImageAlpha
+    ImageOptim
+    MAMP Pro
+    Sublime Text
+    TextMate
+    Transmit
+    VirtualBox (Win7, Win8)
+
+Other:
+    1 Password
+    Ableton
+    Adobe Creative Suite
+    Archiver
+    Amnesia
+    Backblaze
+    Cheddar
+    Dropbox
+    Google Drive
+    Kaleidoscope
+    LayerCake
+    Mixed In Key
+    Rdio
+    Serato Scratch Live
+    Skype
+    Spotify
+    uTorrent
+
+EOT
+
+}
