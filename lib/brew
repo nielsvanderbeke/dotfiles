@@ -24,6 +24,7 @@ run_brew() {
             'bash-completion'
             'jpeg'
             'macvim --override-system-vim'
+            'mongodb'
             'node'
             'optipng'
             'phantomjs'
